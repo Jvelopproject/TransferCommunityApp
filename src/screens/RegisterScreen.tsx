@@ -2,6 +2,7 @@ import { useNavigation } from "@react-navigation/native";
 import axios from "axios";
 import React, { useRef, useState } from "react";
 import {
+    Image,
     StyleSheet,
     Text,
     TextInput,
@@ -16,6 +17,7 @@ const RegisterScreen = () => {
   const [nickname, setNickName] = useState("");
   const [email, setEmail] = useState("");
   const [pwd, setPwd] = useState("");
+  const [visible, setVisible] = useState(true);
 
   const emailRef = useRef(null);
   const pwdRef = useRef(null);
@@ -55,6 +57,12 @@ const RegisterScreen = () => {
           onSubmitEditing={handleEmailSubmit}
           returnKeyType="next"
         />
+        <TouchableOpacity onPress={() => setNickName("")}>
+          <Image
+            source={require("../public/images/closecircle.png")}
+            style={{ width: 24, height: 24 }}
+          />
+        </TouchableOpacity>
       </View>
       <View style={styles.emailTextInputWrapper}>
         <TextInput
@@ -65,6 +73,12 @@ const RegisterScreen = () => {
           onSubmitEditing={handlePasswordSubmit}
           returnKeyType="next"
         />
+        <TouchableOpacity onPress={() => setEmail("")}>
+          <Image
+            source={require("../public/images/closecircle.png")}
+            style={{ width: 24, height: 24 }}
+          />
+        </TouchableOpacity>
       </View>
 
       <View style={styles.pwdTextInputWrapper}>
@@ -73,9 +87,24 @@ const RegisterScreen = () => {
           onChangeText={(text) => setPwd(text)}
           value={pwd}
           ref={pwdRef}
-          secureTextEntry={true}
+          secureTextEntry={visible}
           onSubmitEditing={Register}
         />
+        {visible ? (
+          <TouchableOpacity onPress={() => setVisible(!visible)}>
+            <Image
+              source={require("../public/images/visible.png")}
+              style={{ width: 24, height: 24 }}
+            />
+          </TouchableOpacity>
+        ) : (
+          <TouchableOpacity onPress={() => setVisible(!visible)}>
+            <Image
+              source={require("../public/images/invisible.png")}
+              style={{ width: 24, height: 24 }}
+            />
+          </TouchableOpacity>
+        )}
       </View>
 
       <View style={styles.loginButton}>
@@ -106,29 +135,35 @@ const styles = StyleSheet.create({
     margin: 20,
   },
   nicknameTextInputWrapper: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
     width: "100%",
     height: 60,
     borderWidth: 1,
     borderRadius: 15,
-    justifyContent: "center",
     padding: 15,
   },
   emailTextInputWrapper: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
     width: "100%",
     height: 60,
     borderWidth: 1,
     borderRadius: 15,
-    justifyContent: "center",
     padding: 15,
     marginTop: 15,
   },
   pwdTextInputWrapper: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
     width: "100%",
     height: 60,
     borderWidth: 1,
     marginTop: 15,
     borderRadius: 15,
-    justifyContent: "center",
     padding: 15,
   },
   loginButton: {
