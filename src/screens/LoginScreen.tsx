@@ -1,18 +1,19 @@
 import { useNavigation } from "@react-navigation/native";
+import { NativeStackNavigationProp } from "@react-navigation/native-stack/lib/typescript/src/types";
 import axios from "axios";
 import React, { useRef, useState } from "react";
 import {
-    Image,
-    StyleSheet,
-    Text,
-    TextInput,
-    TouchableOpacity,
-    View,
+  Image,
+  StyleSheet,
+  Text,
+  TextInput,
+  TouchableOpacity,
+  View,
 } from "react-native";
 
 const LoginScreen = () => {
   // Logics
-  const navigation = useNavigation();
+  const navigation = useNavigation<NativeStackNavigationProp<ROOT_NAVIGATION>>();
 
   const [email, setEmail] = useState("");
   const [pwd, setPwd] = useState("");

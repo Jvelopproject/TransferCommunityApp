@@ -6,7 +6,7 @@ import LoginScreen from './src/screens/LoginScreen';
 import RegisterScreen from './src/screens/RegisterScreen';
 
 
-const Stack = createNativeStackNavigator();
+const Stack = createNativeStackNavigator<ROOT_NAVIGATION>();
 
 export default function App() {
   return (
