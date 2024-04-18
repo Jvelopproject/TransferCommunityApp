@@ -27,9 +27,9 @@ const LoginScreen = () => {
     }
   };
 
-  const Login = () => {
+  const Login = async () => {
     try {
-      const response = axios;
+      const response = await axios.get();
     } catch (error) {}
   };
 

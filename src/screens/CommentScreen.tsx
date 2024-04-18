@@ -3,16 +3,16 @@ import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import React from "react";
 import { Text, View } from "react-native";
 
-const CommunityScreen = () => {
+const CommentScreen = () => {
   //Logics
   const navigation = useNavigation<NativeStackNavigationProp<ROOT_NAVIGATION>>();
 
   //Views
   return (
     <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-      <Text>CommunityScreen</Text>
+      <Text>CommentScreen</Text>
     </View>
   );
 };
 
-export default CommunityScreen;
+export default CommentScreen;
