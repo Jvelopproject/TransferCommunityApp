@@ -29,7 +29,9 @@ const LoginScreen = () => {
 
   const Login = async () => {
     try {
-      const response = await axios.get();
+      const response = await axios
+        .get()
+        .then(() => navigation.navigate("Tabs"));
     } catch (error) {}
   };
 
@@ -52,7 +54,7 @@ const LoginScreen = () => {
         />
         <TouchableOpacity onPress={() => setEmail("")}>
           <Image
-            source={require("../public/images/closecircle.png")}
+            source={require("../public/images/Auth/closecircle.png")}
             style={{ width: 24, height: 24 }}
           />
         </TouchableOpacity>
@@ -71,14 +73,14 @@ const LoginScreen = () => {
         {visible ? (
           <TouchableOpacity onPress={() => setVisible(!visible)}>
             <Image
-              source={require("../public/images/visible.png")}
+              source={require("../public/images/Auth/visible.png")}
               style={{ width: 24, height: 24 }}
             />
           </TouchableOpacity>
         ) : (
           <TouchableOpacity onPress={() => setVisible(!visible)}>
             <Image
-              source={require("../public/images/invisible.png")}
+              source={require("../public/images/Auth/invisible.png")}
               style={{ width: 24, height: 24 }}
             />
           </TouchableOpacity>
@@ -91,7 +93,7 @@ const LoginScreen = () => {
         </TouchableOpacity>
       </View>
       <View style={styles.loginButton}>
-        <TouchableOpacity onPress={() => navigation.navigate("Comment")}>
+        <TouchableOpacity onPress={() => navigation.navigate("Tabs")}>
           <Text>비회원으로 입장</Text>
         </TouchableOpacity>
       </View>

@@ -60,7 +60,7 @@ const RegisterScreen = () => {
         />
         <TouchableOpacity onPress={() => setNickName("")}>
           <Image
-            source={require("../public/images/closecircle.png")}
+            source={require("../public/images/Auth/closecircle.png")}
             style={{ width: 24, height: 24 }}
           />
         </TouchableOpacity>
@@ -76,7 +76,7 @@ const RegisterScreen = () => {
         />
         <TouchableOpacity onPress={() => setEmail("")}>
           <Image
-            source={require("../public/images/closecircle.png")}
+            source={require("../public/images/Auth/closecircle.png")}
             style={{ width: 24, height: 24 }}
           />
         </TouchableOpacity>
@@ -94,14 +94,14 @@ const RegisterScreen = () => {
         {visible ? (
           <TouchableOpacity onPress={() => setVisible(!visible)}>
             <Image
-              source={require("../public/images/visible.png")}
+              source={require("../public/images/Auth/visible.png")}
               style={{ width: 24, height: 24 }}
             />
           </TouchableOpacity>
         ) : (
           <TouchableOpacity onPress={() => setVisible(!visible)}>
             <Image
-              source={require("../public/images/invisible.png")}
+              source={require("../public/images/Auth/invisible.png")}
               style={{ width: 24, height: 24 }}
             />
           </TouchableOpacity>

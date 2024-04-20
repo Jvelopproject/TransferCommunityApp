@@ -11,7 +11,7 @@ export const Stacks = () => {
       <Stack.Screen name="Login" component={LoginScreen} />
       <Stack.Screen name="Register" component={RegisterScreen} />
       <Stack.Screen
-        name="Comment"
+        name="Tabs"
         component={Tabs}
         options={{ headerShown: false }}
       />
