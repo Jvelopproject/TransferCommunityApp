@@ -1,21 +1,11 @@
 import { NavigationContainer } from "@react-navigation/native";
 import React from "react";
-import { StyleSheet } from "react-native";
-import { Tabs } from "./src/navigations/Tabs";
+import { Stacks } from './src/navigations/Stacks';
 
 export default function App() {
   return (
     <NavigationContainer>
-      <Tabs />
+      <Stacks />
     </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-});

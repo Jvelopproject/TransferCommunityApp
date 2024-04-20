@@ -90,6 +90,11 @@ const LoginScreen = () => {
           <Text>Login</Text>
         </TouchableOpacity>
       </View>
+      <View style={styles.loginButton}>
+        <TouchableOpacity onPress={() => navigation.navigate("Comment")}>
+          <Text>비회원으로 입장</Text>
+        </TouchableOpacity>
+      </View>
       <TouchableOpacity
         style={styles.registerButton}
         onPress={() => navigation.navigate("Register")}
