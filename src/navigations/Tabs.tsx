@@ -17,7 +17,7 @@ export const Tabs = () => {
         options={{
           headerShown: false,
           tabBarLabel: "스케줄링",
-          tabBarIcon: ({ focused, color }) => {
+          tabBarIcon: ({ color }) => {
             return (
               <Image
                 source={require("../public/images/Tabs/calendar.png")}
@@ -29,6 +29,7 @@ export const Tabs = () => {
               />
             );
           },
+          tabBarActiveTintColor: "black",
         }}
       />
       <Tab.Screen
@@ -37,7 +38,7 @@ export const Tabs = () => {
         options={{
           headerShown: false,
           tabBarLabel: "게시판",
-          tabBarIcon: ({ focused, color }) => {
+          tabBarIcon: ({ color }) => {
             return (
               <Image
                 source={require("../public/images/Tabs/house.png")}
@@ -49,6 +50,7 @@ export const Tabs = () => {
               />
             );
           },
+          tabBarActiveTintColor: "black",
         }}
       />
       <Tab.Screen
@@ -57,7 +59,7 @@ export const Tabs = () => {
         options={{
           headerShown: false,
           tabBarLabel: "채팅",
-          tabBarIcon: ({ focused, color }) => {
+          tabBarIcon: ({ color }) => {
             return (
               <Image
                 source={require("../public/images/Tabs/messenger.png")}
@@ -69,6 +71,7 @@ export const Tabs = () => {
               />
             );
           },
+          tabBarActiveTintColor: "black",
         }}
       />
       <Tab.Screen
@@ -77,7 +80,7 @@ export const Tabs = () => {
         options={{
           headerShown: false,
           tabBarLabel: "리스트",
-          tabBarIcon: ({ focused, color }) => {
+          tabBarIcon: ({ color }) => {
             return (
               <Image
                 source={require("../public/images/Tabs/list.png")}
@@ -89,6 +92,7 @@ export const Tabs = () => {
               />
             );
           },
+          tabBarActiveTintColor: "black",
         }}
       />
     </Tab.Navigator>
