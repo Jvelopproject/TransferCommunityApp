@@ -8,7 +8,7 @@ import {
   Text,
   TextInput,
   TouchableOpacity,
-  View,
+  View
 } from "react-native";
 
 const RegisterScreen = () => {
@@ -43,74 +43,138 @@ const RegisterScreen = () => {
 
   // Views
   return (
-    <View style={styles.container}>
-      <View style={styles.appLogo}>
-        <Text>App Logo</Text>
-      </View>
-      <View style={styles.appLogoTitle}>
-        <Text>App Logo Name</Text>
-      </View>
-      <View style={styles.nicknameTextInputWrapper}>
-        <TextInput
-          placeholder="NickName"
-          onChangeText={(text) => setNickName(text)}
-          value={nickname}
-          onSubmitEditing={handleEmailSubmit}
-          returnKeyType="next"
-        />
-        <TouchableOpacity onPress={() => setNickName("")}>
-          <Image
-            source={require("../public/images/Auth/closecircle.png")}
-            style={{ width: 24, height: 24 }}
+    // 전체 레이아웃
+    <View
+      style={{
+        flex: 1,
+        justifyContent: "center",
+        alignItems: "center",
+        backgroundColor: "white",
+        paddingHorizontal: 30,
+      }}
+    >
+      {/* 텍스트 인풋 레이아웃 */}
+      <View
+        style={{
+          justifyContent: "center",
+          alignItems: "center",
+          width: "100%",
+          marginBottom: 30,
+        }}
+      >
+        <View
+          style={{
+            flexDirection: "row",
+            justifyContent: "space-between",
+            alignItems: "center",
+            width: "100%",
+            height: 60,
+            borderRadius: 15,
+            padding: 15,
+            backgroundColor: '#e5e5e5',
+            marginBottom: 7.5,
+          }}
+        >
+          <TextInput
+            placeholder="닉네임"
+            onChangeText={(text) => setNickName(text)}
+            value={nickname}
+            onSubmitEditing={handleEmailSubmit}
+            returnKeyType="next"
           />
-        </TouchableOpacity>
-      </View>
-      <View style={styles.emailTextInputWrapper}>
-        <TextInput
-          placeholder="Email"
-          onChangeText={(text) => setEmail(text)}
-          value={email}
-          ref={emailRef}
-          onSubmitEditing={handlePasswordSubmit}
-          returnKeyType="next"
-        />
-        <TouchableOpacity onPress={() => setEmail("")}>
-          <Image
-            source={require("../public/images/Auth/closecircle.png")}
-            style={{ width: 24, height: 24 }}
-          />
-        </TouchableOpacity>
-      </View>
-
-      <View style={styles.pwdTextInputWrapper}>
-        <TextInput
-          placeholder="Password"
-          onChangeText={(text) => setPwd(text)}
-          value={pwd}
-          ref={pwdRef}
-          secureTextEntry={visible}
-          onSubmitEditing={Register}
-        />
-        {visible ? (
-          <TouchableOpacity onPress={() => setVisible(!visible)}>
+          <TouchableOpacity onPress={() => setNickName("")}>
             <Image
-              source={require("../public/images/Auth/visible.png")}
+              source={require("../public/images/Auth/closecircle.png")}
               style={{ width: 24, height: 24 }}
             />
           </TouchableOpacity>
-        ) : (
-          <TouchableOpacity onPress={() => setVisible(!visible)}>
+        </View>
+
+        <View
+          style={{
+            flexDirection: "row",
+            justifyContent: "space-between",
+            alignItems: "center",
+            width: "100%",
+            height: 60,
+            borderRadius: 15,
+            padding: 15,
+            backgroundColor: '#e5e5e5',
+            marginTop: 7.5,
+            marginBottom: 7.5,
+          }}
+        >
+          <TextInput
+            placeholder="이메일"
+            onChangeText={(text) => setEmail(text)}
+            value={email}
+            ref={emailRef}
+            onSubmitEditing={handlePasswordSubmit}
+            returnKeyType="next"
+          />
+          <TouchableOpacity onPress={() => setEmail("")}>
             <Image
-              source={require("../public/images/Auth/invisible.png")}
+              source={require("../public/images/Auth/closecircle.png")}
               style={{ width: 24, height: 24 }}
             />
           </TouchableOpacity>
-        )}
+        </View>
+
+        <View
+          style={{
+            flexDirection: "row",
+            justifyContent: "space-between",
+            alignItems: "center",
+            width: "100%",
+            height: 60,
+            borderRadius: 15,
+            padding: 15,
+            backgroundColor: '#e5e5e5',
+            marginTop: 7.5,
+          }}
+        >
+          <TextInput
+            placeholder="비밀번호"
+            onChangeText={(text) => setPwd(text)}
+            value={pwd}
+            ref={pwdRef}
+            secureTextEntry={visible}
+            onSubmitEditing={Register}
+          />
+          {visible ? (
+            <TouchableOpacity onPress={() => setVisible(!visible)}>
+              <Image
+                source={require("../public/images/Auth/visible.png")}
+                style={{ width: 24, height: 24 }}
+              />
+            </TouchableOpacity>
+          ) : (
+            <TouchableOpacity onPress={() => setVisible(!visible)}>
+              <Image
+                source={require("../public/images/Auth/invisible.png")}
+                style={{ width: 24, height: 24 }}
+              />
+            </TouchableOpacity>
+          )}
+        </View>
       </View>
 
-      <View style={styles.loginButton}>
+      {/* 버튼 레이아웃 */}
+      <View
+        style={{
+          width: "100%",
+          height: 60,
+          backgroundColor: "#2978f4",
+          justifyContent: "center",
+          alignItems: "center",
+          borderRadius: 15,
+          marginTop: 30,
+        }}
+      >
         <TouchableOpacity>
-          <Text>Register</Text>
+          <Text style={{ color: "white", fontSize: 20 }}>
+            회원가입
+          </Text>
         </TouchableOpacity>
       </View>
     </View>

@@ -54,7 +54,7 @@ const LoginScreen = () => {
           justifyContent: "center",
           alignItems: "center",
           width: "100%",
-          marginBottom: 30
+          marginBottom: 30,
         }}
       >
         <View
@@ -64,13 +64,14 @@ const LoginScreen = () => {
             alignItems: "center",
             width: "100%",
             height: 60,
-            borderWidth: 1,
             borderRadius: 15,
             padding: 15,
+            backgroundColor: '#e5e5e5',
+            marginBottom: 7.5,
           }}
         >
           <TextInput
-            placeholder="Email"
+            placeholder="이메일"
             onChangeText={(text) => setEmail(text)}
             value={email}
             onSubmitEditing={handleEmailSubmit}
@@ -92,14 +93,14 @@ const LoginScreen = () => {
             alignItems: "center",
             width: "100%",
             height: 60,
-            borderWidth: 1,
-            marginTop: 15,
             borderRadius: 15,
             padding: 15,
+            backgroundColor: '#e5e5e5',
+            marginTop: 7.5,
           }}
         >
           <TextInput
-            placeholder="Password"
+            placeholder="비밀번호"
             onChangeText={(text) => setPwd(text)}
             value={pwd}
             ref={inputRef}
@@ -141,13 +142,13 @@ const LoginScreen = () => {
             alignItems: "center",
             width: "100%",
             height: 60,
-            backgroundColor: "#D9D9D9",
+            backgroundColor: "#2978f4",
             borderRadius: 15,
             marginBottom: 5,
           }}
         >
           <TouchableOpacity>
-            <Text>Login</Text>
+            <Text style={{ color: "white", fontSize: 20 }}>로그인</Text>
           </TouchableOpacity>
         </View>
 
@@ -157,13 +158,14 @@ const LoginScreen = () => {
             alignItems: "center",
             width: "100%",
             height: 60,
-            backgroundColor: "#D9D9D9",
             borderRadius: 15,
             marginTop: 5,
           }}
         >
           <TouchableOpacity onPress={() => navigation.navigate("Tabs")}>
-            <Text>비회원으로 입장</Text>
+            <Text style={{ color: "#2978f4", fontSize: 15 }}>
+              비회원으로 입장
+            </Text>
           </TouchableOpacity>
         </View>
       </View>
@@ -174,7 +176,7 @@ const LoginScreen = () => {
           style={styles.registerButton}
           onPress={() => navigation.navigate("Register")}
         >
-          <Text>Register</Text>
+          <Text>회원가입</Text>
         </TouchableOpacity>
       </View>
     </View>
