@@ -71,7 +71,7 @@ const RegisterScreen = () => {
             height: 60,
             borderRadius: 15,
             padding: 15,
-            backgroundColor: '#e5e5e5',
+            backgroundColor: "#e5e5e5",
             marginBottom: 7.5,
           }}
         >
@@ -81,11 +81,12 @@ const RegisterScreen = () => {
             value={nickname}
             onSubmitEditing={handleEmailSubmit}
             returnKeyType="next"
+            style={{ flex: 1 }}
           />
           <TouchableOpacity onPress={() => setNickName("")}>
             <Image
               source={require("../public/images/Auth/closecircle.png")}
-              style={{ width: 24, height: 24 }}
+              style={{ width: 24, height: 24, marginLeft: 10 }}
             />
           </TouchableOpacity>
         </View>
@@ -99,7 +100,7 @@ const RegisterScreen = () => {
             height: 60,
             borderRadius: 15,
             padding: 15,
-            backgroundColor: '#e5e5e5',
+            backgroundColor: "#e5e5e5",
             marginTop: 7.5,
             marginBottom: 7.5,
           }}
@@ -111,11 +112,12 @@ const RegisterScreen = () => {
             ref={emailRef}
             onSubmitEditing={handlePasswordSubmit}
             returnKeyType="next"
+            style={{ flex: 1 }}
           />
           <TouchableOpacity onPress={() => setEmail("")}>
             <Image
               source={require("../public/images/Auth/closecircle.png")}
-              style={{ width: 24, height: 24 }}
+              style={{ width: 24, height: 24, marginLeft: 10 }}
             />
           </TouchableOpacity>
         </View>
@@ -129,7 +131,7 @@ const RegisterScreen = () => {
             height: 60,
             borderRadius: 15,
             padding: 15,
-            backgroundColor: '#e5e5e5',
+            backgroundColor: "#e5e5e5",
             marginTop: 7.5,
           }}
         >
@@ -140,19 +142,20 @@ const RegisterScreen = () => {
             ref={pwdRef}
             secureTextEntry={visible}
             onSubmitEditing={Register}
+            style={{ flex: 1 }}
           />
           {visible ? (
             <TouchableOpacity onPress={() => setVisible(!visible)}>
               <Image
                 source={require("../public/images/Auth/visible.png")}
-                style={{ width: 24, height: 24 }}
+                style={{ width: 24, height: 24, marginLeft: 10 }}
               />
             </TouchableOpacity>
           ) : (
             <TouchableOpacity onPress={() => setVisible(!visible)}>
               <Image
                 source={require("../public/images/Auth/invisible.png")}
-                style={{ width: 24, height: 24 }}
+                style={{ width: 24, height: 24, marginLeft: 10 }}
               />
             </TouchableOpacity>
           )}
@@ -172,9 +175,7 @@ const RegisterScreen = () => {
         }}
       >
         <TouchableOpacity>
-          <Text style={{ color: "white", fontSize: 20 }}>
-            회원가입
-          </Text>
+          <Text style={{ color: "white", fontSize: 20 }}>회원가입</Text>
         </TouchableOpacity>
       </View>
     </View>

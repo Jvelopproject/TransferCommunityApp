@@ -76,12 +76,13 @@ const LoginScreen = () => {
             value={email}
             onSubmitEditing={handleEmailSubmit}
             returnKeyType="next"
+            style={{ flex: 1 }}
           />
 
           <TouchableOpacity onPress={() => setEmail("")}>
             <Image
               source={require("../public/images/Auth/closecircle.png")}
-              style={{ width: 24, height: 24 }}
+              style={{ width: 24, height: 24, marginLeft: 10 }}
             />
           </TouchableOpacity>
         </View>
@@ -107,20 +108,21 @@ const LoginScreen = () => {
             secureTextEntry={visible}
             onSubmitEditing={Login}
             returnKeyType="done"
+            style={{ flex: 1 }}
           />
 
           {visible ? (
             <TouchableOpacity onPress={() => setVisible(!visible)}>
               <Image
                 source={require("../public/images/Auth/visible.png")}
-                style={{ width: 24, height: 24 }}
+                style={{ width: 24, height: 24, marginLeft: 10 }}
               />
             </TouchableOpacity>
           ) : (
             <TouchableOpacity onPress={() => setVisible(!visible)}>
               <Image
                 source={require("../public/images/Auth/invisible.png")}
-                style={{ width: 24, height: 24 }}
+                style={{ width: 24, height: 24, marginLeft: 10 }}
               />
             </TouchableOpacity>
           )}
