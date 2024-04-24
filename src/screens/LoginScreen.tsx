@@ -10,6 +10,7 @@ import {
   TouchableOpacity,
   View,
 } from "react-native";
+import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
 
 const LoginScreen = () => {
   // Logics
@@ -39,14 +40,19 @@ const LoginScreen = () => {
   // Views
   return (
     // 전체 레이아웃
-    <View
-      style={{
+    <KeyboardAwareScrollView
+      contentContainerStyle={{
         flex: 1,
         justifyContent: "center",
         alignItems: "center",
         backgroundColor: "white",
         paddingHorizontal: 30,
       }}
+      resetScrollToCoords={{ x: 0, y: 0 }}
+      scrollEnabled={true}
+      extraHeight={300} // 키보드가 활성화 됐을 때 추가적으로 더 보여질 높이
+      enableOnAndroid={true} // 안드로이드에서도 동일하게 작동하도록 설정
+      keyboardShouldPersistTaps="handled"
     >
       {/* 텍스트 인풋 레이아웃 */}
       <View
@@ -66,7 +72,7 @@ const LoginScreen = () => {
             height: 60,
             borderRadius: 15,
             padding: 15,
-            backgroundColor: '#e5e5e5',
+            backgroundColor: "#e5e5e5",
             marginBottom: 7.5,
           }}
         >
@@ -96,7 +102,7 @@ const LoginScreen = () => {
             height: 60,
             borderRadius: 15,
             padding: 15,
-            backgroundColor: '#e5e5e5',
+            backgroundColor: "#e5e5e5",
             marginTop: 7.5,
           }}
         >
@@ -181,7 +187,7 @@ const LoginScreen = () => {
           <Text>회원가입</Text>
         </TouchableOpacity>
       </View>
-    </View>
+    </KeyboardAwareScrollView>
   );
 };
 

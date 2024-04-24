@@ -8,12 +8,14 @@ import {
   Text,
   TextInput,
   TouchableOpacity,
-  View
+  View,
 } from "react-native";
+import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
 
 const RegisterScreen = () => {
   // Logics
-  const navigation = useNavigation<NativeStackNavigationProp<ROOT_NAVIGATION>>();
+  const navigation =
+    useNavigation<NativeStackNavigationProp<ROOT_NAVIGATION>>();
 
   const [nickname, setNickName] = useState("");
   const [email, setEmail] = useState("");
@@ -44,14 +46,19 @@ const RegisterScreen = () => {
   // Views
   return (
     // 전체 레이아웃
-    <View
-      style={{
+    <KeyboardAwareScrollView
+      contentContainerStyle={{
         flex: 1,
         justifyContent: "center",
         alignItems: "center",
         backgroundColor: "white",
         paddingHorizontal: 30,
       }}
+      resetScrollToCoords={{ x: 0, y: 0 }}
+      scrollEnabled={true}
+      extraHeight={300} // 키보드가 활성화 됐을 때 추가적으로 더 보여질 높이
+      enableOnAndroid={true} // 안드로이드에서도 동일하게 작동하도록 설정
+      keyboardShouldPersistTaps="handled"
     >
       {/* 텍스트 인풋 레이아웃 */}
       <View
@@ -178,7 +185,7 @@ const RegisterScreen = () => {
           <Text style={{ color: "white", fontSize: 20 }}>회원가입</Text>
         </TouchableOpacity>
       </View>
-    </View>
+    </KeyboardAwareScrollView>
   );
 };
 
