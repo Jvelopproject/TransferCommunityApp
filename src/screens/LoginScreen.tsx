@@ -49,9 +49,9 @@ const LoginScreen = () => {
         paddingHorizontal: 30,
       }}
       resetScrollToCoords={{ x: 0, y: 0 }}
-      scrollEnabled={true}
-      extraHeight={300} // 키보드가 활성화 됐을 때 추가적으로 더 보여질 높이
-      enableOnAndroid={true} // 안드로이드에서도 동일하게 작동하도록 설정
+      scrollEnabled={false}
+      extraHeight={300} 
+      enableOnAndroid={true} 
       keyboardShouldPersistTaps="handled"
     >
       {/* 텍스트 인풋 레이아웃 */}
