@@ -1,4 +1,5 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import React from "react";
 import LoginScreen from "../screens/LoginScreen";
 import RegisterScreen from "../screens/RegisterScreen";
 import { Tabs } from "./Tabs";
@@ -11,8 +12,16 @@ export const Stacks = () => {
       initialRouteName="Login"
       screenOptions={{ headerBackTitleVisible: false }}
     >
-      <Stack.Screen name="Login" component={LoginScreen} />
-      <Stack.Screen name="Register" component={RegisterScreen} />
+      <Stack.Screen
+        name="Login"
+        component={LoginScreen}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="Register"
+        component={RegisterScreen}
+        options={{ headerTitle: "회원가입" }}
+      />
       <Stack.Screen
         name="Tabs"
         component={Tabs}

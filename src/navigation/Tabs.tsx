@@ -3,7 +3,7 @@ import React from "react";
 import { Image } from "react-native";
 import ChatListScreen from "../screens/ChatListScreen";
 import CommentScreen from "../screens/CommentScreen";
-import ScheduleScreen from "../screens/ScheduleScreen";
+import ScheduleScreen from '../screens/ScheduleScreen';
 import SummaryScreen from "../screens/SummaryScreen";
 
 const Tab = createBottomTabNavigator<ROOT_NAVIGATION>();
@@ -16,11 +16,11 @@ export const Tabs = () => {
         component={CommentScreen}
         options={{
           headerShown: false,
-          tabBarLabel: "스케줄링",
+          tabBarLabel: "게시판",
           tabBarIcon: ({ color }) => {
             return (
               <Image
-                source={require("../public/images/Tabs/calendar.png")}
+                source={require("../assets/images/Tabs/house.png")}
                 style={{
                   width: 20,
                   height: 20,
@@ -37,11 +37,11 @@ export const Tabs = () => {
         component={ScheduleScreen}
         options={{
           headerShown: false,
-          tabBarLabel: "게시판",
+          tabBarLabel: "스케줄링",
           tabBarIcon: ({ color }) => {
             return (
               <Image
-                source={require("../public/images/Tabs/house.png")}
+                source={require("../assets/images/Tabs/calendar.png")}
                 style={{
                   width: 20,
                   height: 20,
@@ -62,7 +62,7 @@ export const Tabs = () => {
           tabBarIcon: ({ color }) => {
             return (
               <Image
-                source={require("../public/images/Tabs/messenger.png")}
+                source={require("../assets/images/Tabs/messenger.png")}
                 style={{
                   width: 20,
                   height: 20,
@@ -83,7 +83,7 @@ export const Tabs = () => {
           tabBarIcon: ({ color }) => {
             return (
               <Image
-                source={require("../public/images/Tabs/list.png")}
+                source={require("../assets/images/Tabs/list.png")}
                 style={{
                   width: 20,
                   height: 20,

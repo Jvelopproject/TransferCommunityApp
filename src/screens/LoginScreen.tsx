@@ -1,7 +1,7 @@
 import { useNavigation } from "@react-navigation/native";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack/lib/typescript/src/types";
 import axios from "axios";
-import { useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import {
   Image,
   StyleSheet,
@@ -87,7 +87,7 @@ const LoginScreen = () => {
 
           <TouchableOpacity onPress={() => setEmail("")}>
             <Image
-              source={require("../public/images/Auth/closecircle.png")}
+              source={require("../assets/images/Auth/closecircle.png")}
               style={{ width: 24, height: 24, marginLeft: 10 }}
             />
           </TouchableOpacity>
@@ -120,14 +120,14 @@ const LoginScreen = () => {
           {visible ? (
             <TouchableOpacity onPress={() => setVisible(!visible)}>
               <Image
-                source={require("../public/images/Auth/visible.png")}
+                source={require("../assets/images/Auth/visible.png")}
                 style={{ width: 24, height: 24, marginLeft: 10 }}
               />
             </TouchableOpacity>
           ) : (
             <TouchableOpacity onPress={() => setVisible(!visible)}>
               <Image
-                source={require("../public/images/Auth/invisible.png")}
+                source={require("../assets/images/Auth/invisible.png")}
                 style={{ width: 24, height: 24, marginLeft: 10 }}
               />
             </TouchableOpacity>
@@ -156,7 +156,7 @@ const LoginScreen = () => {
           }}
         >
           <TouchableOpacity>
-            <Text style={{ color: "white", fontSize: 20 }}>로그인</Text>
+            <Text style={{ color: "white", fontSize: 16 }}>로그인</Text>
           </TouchableOpacity>
         </View>
 

@@ -10,6 +10,7 @@ import {
   TouchableOpacity,
   View,
 } from "react-native";
+import CheckBox from "react-native-check-box";
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
 
 const RegisterScreen = () => {
@@ -20,6 +21,7 @@ const RegisterScreen = () => {
   const [nickname, setNickName] = useState("");
   const [email, setEmail] = useState("");
   const [pwd, setPwd] = useState("");
+  const [isChecked, setIsChecked] = useState(false);
   const [visible, setVisible] = useState(true);
 
   const emailRef = useRef(null);
@@ -56,8 +58,8 @@ const RegisterScreen = () => {
       }}
       resetScrollToCoords={{ x: 0, y: 0 }}
       scrollEnabled={false}
-      extraHeight={300} 
-      enableOnAndroid={true} 
+      extraHeight={300}
+      enableOnAndroid={true}
       keyboardShouldPersistTaps="handled"
     >
       {/* 텍스트 인풋 레이아웃 */}
@@ -69,6 +71,7 @@ const RegisterScreen = () => {
           marginBottom: 30,
         }}
       >
+        {/* 닉네임 인풋 레이아웃 */}
         <View
           style={{
             flexDirection: "row",
@@ -92,12 +95,13 @@ const RegisterScreen = () => {
           />
           <TouchableOpacity onPress={() => setNickName("")}>
             <Image
-              source={require("../public/images/Auth/closecircle.png")}
+              source={require("../assets/images/Auth/closecircle.png")}
               style={{ width: 24, height: 24, marginLeft: 10 }}
             />
           </TouchableOpacity>
         </View>
 
+        {/* 이메일 인풋 레이아웃 */}
         <View
           style={{
             flexDirection: "row",
@@ -123,12 +127,13 @@ const RegisterScreen = () => {
           />
           <TouchableOpacity onPress={() => setEmail("")}>
             <Image
-              source={require("../public/images/Auth/closecircle.png")}
+              source={require("../assets/images/Auth/closecircle.png")}
               style={{ width: 24, height: 24, marginLeft: 10 }}
             />
           </TouchableOpacity>
         </View>
 
+        {/* 비밀번호 인풋 레이아웃 */}
         <View
           style={{
             flexDirection: "row",
@@ -154,18 +159,37 @@ const RegisterScreen = () => {
           {visible ? (
             <TouchableOpacity onPress={() => setVisible(!visible)}>
               <Image
-                source={require("../public/images/Auth/visible.png")}
+                source={require("../assets/images/Auth/visible.png")}
                 style={{ width: 24, height: 24, marginLeft: 10 }}
               />
             </TouchableOpacity>
           ) : (
             <TouchableOpacity onPress={() => setVisible(!visible)}>
               <Image
-                source={require("../public/images/Auth/invisible.png")}
+                source={require("../assets/images/Auth/invisible.png")}
                 style={{ width: 24, height: 24, marginLeft: 10 }}
               />
             </TouchableOpacity>
           )}
+        </View>
+
+        {/* 체크박스 레이아웃 */}
+        <View
+          style={{
+            width: "100%",
+            flexDirection: "row",
+            alignItems: "center",
+            justifyContent: "flex-start",
+            marginTop: 15,
+          }}
+        >
+          <CheckBox
+            onClick={() => {
+              setIsChecked(!isChecked);
+            }}
+            isChecked={isChecked}
+          />
+          <Text style={{ marginLeft: 5 }}>학원 관리자</Text>
         </View>
       </View>
 
@@ -182,7 +206,7 @@ const RegisterScreen = () => {
         }}
       >
         <TouchableOpacity>
-          <Text style={{ color: "white", fontSize: 20 }}>회원가입</Text>
+          <Text style={{ color: "white", fontSize: 16 }}>회원가입</Text>
         </TouchableOpacity>
       </View>
     </KeyboardAwareScrollView>
