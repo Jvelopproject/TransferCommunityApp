@@ -3,4 +3,3 @@
 - TypeScript
 - React Navigation
 - Axios
-- 
