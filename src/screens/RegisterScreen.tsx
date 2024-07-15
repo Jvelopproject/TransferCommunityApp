@@ -1,6 +1,8 @@
+
 import { useNavigation } from "@react-navigation/native";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import axios from "axios";
+import Checkbox from "expo-checkbox";
 import React, { useRef, useState } from "react";
 import {
   Image,
@@ -10,7 +12,6 @@ import {
   TouchableOpacity,
   View,
 } from "react-native";
-import CheckBox from "react-native-check-box";
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
 
 const RegisterScreen = () => {
@@ -39,10 +40,22 @@ const RegisterScreen = () => {
     }
   };
 
-  const Register = () => {
+  const Register = async () => {
     try {
-      const response = axios;
-    } catch (error) {}
+      await axios
+        .post("/api/auth/signup", {
+          nickname,
+          email,
+          pwd,
+          isChecked,
+        })
+        .then((res) => {
+          console.log("data: ", res);
+          navigation.navigate("Login");
+        });
+    } catch (error) {
+      console.log("Login error: ");
+    }
   };
 
   // Views
@@ -183,11 +196,11 @@ const RegisterScreen = () => {
             marginTop: 15,
           }}
         >
-          <CheckBox
-            onClick={() => {
-              setIsChecked(!isChecked);
-            }}
-            isChecked={isChecked}
+          <Checkbox
+            value={isChecked}
+            onValueChange={() => setIsChecked(!isChecked)}
+            style={{borderRadius: 4}}
+            disabled={false}
           />
           <Text style={{ marginLeft: 5 }}>학원 관리자</Text>
         </View>

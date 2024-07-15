@@ -1,9 +1,12 @@
 declare type ROOT_NAVIGATION = {
   Login: undefined;
   Register: undefined;
-  Tabs: undefined;
-  CommentTab: undefined;
-  ScheduleTab: undefined;
-  ChatListTab: undefined;
-  SummaryTab: undefined;
+  Tab: undefined;
+  Comment: undefined;
+  Schedule: undefined;
+  ChatList: undefined;
+  Summary: undefined;
+  Drawer: undefined;
+  AcademyCurriculum: undefined;
+  AcademyInfo: undefined;
 };

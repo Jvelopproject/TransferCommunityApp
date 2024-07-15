@@ -31,10 +31,18 @@ const LoginScreen = () => {
 
   const Login = async () => {
     try {
-      const response = await axios
-        .get()
-        .then(() => navigation.navigate("Tabs"));
-    } catch (error) {}
+      await axios
+        .post("/api/login/", {
+          email,
+          pwd,
+        })
+        .then((res) => {
+          console.log("data: ", res);
+          navigation.navigate("Tab");
+        });
+    } catch (error) {
+      console.log("Login error: ");
+    }
   };
 
   // Views
@@ -50,8 +58,8 @@ const LoginScreen = () => {
       }}
       resetScrollToCoords={{ x: 0, y: 0 }}
       scrollEnabled={false}
-      extraHeight={300} 
-      enableOnAndroid={true} 
+      extraHeight={300}
+      enableOnAndroid={true}
       keyboardShouldPersistTaps="handled"
     >
       {/* 텍스트 인풋 레이아웃 */}
@@ -170,7 +178,7 @@ const LoginScreen = () => {
             marginTop: 5,
           }}
         >
-          <TouchableOpacity onPress={() => navigation.navigate("Tabs")}>
+          <TouchableOpacity onPress={() => navigation.navigate("Tab")}>
             <Text style={{ color: "#2978f4", fontSize: 15 }}>
               비회원으로 입장
             </Text>

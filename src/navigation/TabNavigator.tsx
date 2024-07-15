@@ -2,18 +2,18 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import React from "react";
 import { Image } from "react-native";
 import ChatListScreen from "../screens/ChatListScreen";
+import CommentScreen from "../screens/CommentScreen";
 import ScheduleScreen from '../screens/ScheduleScreen';
 import SummaryScreen from "../screens/SummaryScreen";
-import { Drawers } from './Drawers';
 
 const Tab = createBottomTabNavigator<ROOT_NAVIGATION>();
 
-export const Tabs = () => {
+export const TabNavigator = () => {
   return (
-    <Tab.Navigator initialRouteName="CommentTab">
+    <Tab.Navigator initialRouteName="Comment">
       <Tab.Screen
-        name="CommentTab"
-        component={Drawers}
+        name="Comment"
+        component={CommentScreen}
         options={{
           headerShown: true,
           headerTitle: "게시판",
@@ -34,7 +34,7 @@ export const Tabs = () => {
         }}
       />
       <Tab.Screen
-        name="ScheduleTab"
+        name="Schedule"
         component={ScheduleScreen}
         options={{
           headerShown: true,
@@ -56,12 +56,12 @@ export const Tabs = () => {
         }}
       />
       <Tab.Screen
-        name="ChatListTab"
+        name="ChatList"
         component={ChatListScreen}
         options={{
           headerShown: true,
           headerTitle: "채팅 목록",
-          tabBarLabel: "채팅",
+          tabBarLabel: "채팅 목록",
           tabBarIcon: ({ color }) => {
             return (
               <Image
@@ -78,7 +78,7 @@ export const Tabs = () => {
         }}
       />
       <Tab.Screen
-        name="SummaryTab"
+        name="Summary"
         component={SummaryScreen}
         options={{
           headerShown: true,

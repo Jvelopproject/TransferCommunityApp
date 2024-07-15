@@ -2,11 +2,11 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import React from "react";
 import LoginScreen from "../screens/LoginScreen";
 import RegisterScreen from "../screens/RegisterScreen";
-import { Tabs } from "./Tabs";
+import { TabNavigator } from "./TabNavigator";
 
 const Stack = createNativeStackNavigator<ROOT_NAVIGATION>();
 
-export const Stacks = () => {
+export const StackNavigator = () => {
   return (
     <Stack.Navigator
       initialRouteName="Login"
@@ -23,8 +23,8 @@ export const Stacks = () => {
         options={{ headerTitle: "회원가입" }}
       />
       <Stack.Screen
-        name="Tabs"
-        component={Tabs}
+        name="Tab"
+        component={TabNavigator}
         options={{ headerShown: false, gestureEnabled: false }}
       />
     </Stack.Navigator>
